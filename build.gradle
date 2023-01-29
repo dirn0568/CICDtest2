@@ -29,6 +29,14 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-websocket'
     implementation 'org.webjars:stomp-websocket:2.3.3-1'
     implementation 'org.webjars:sockjs-client:1.1.2'
+
+    //logback
+    dependencies {
+        implementation (
+                'ch.qos.logback:logback-classic:1.2.3',
+                'ch.qos.logback:logback-core:1.2.3',
+        )
+    }
 }
 
 tasks.named('test') {
