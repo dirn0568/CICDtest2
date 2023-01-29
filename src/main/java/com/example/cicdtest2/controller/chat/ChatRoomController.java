@@ -21,9 +21,10 @@ public class ChatRoomController {
     public void chatroomCreate3() {
         System.out.println("222222222222222222222222222222222");
     }
+
     @ResponseBody
-    @PostMapping("/chatstest")
+    @PostMapping("/chatstest3")
     public void chatroomCreate() {
-        System.out.println("로그야 찍혀라!@!!!!");
+        System.out.println("3333333333333333333333333333333");
     }
 }
