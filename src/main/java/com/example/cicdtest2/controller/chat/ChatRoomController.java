@@ -13,7 +13,13 @@ public class ChatRoomController {
     @ResponseBody
     @GetMapping("/chatstest")
     public void chatroomCreate2() {
-        System.out.println("로그야 찍혀라!@!!!!");
+        System.out.println("1111111111111111111111111");
+    }
+
+    @ResponseBody
+    @GetMapping("/chatstest2")
+    public void chatroomCreate3() {
+        System.out.println("222222222222222222222222222222222");
     }
     @ResponseBody
     @PostMapping("/chatstest")
