@@ -20,7 +20,7 @@ public class ChatController {
         System.out.println(chatMessageDto.getMessage());
         System.out.println(chatMessageDto.getChatRoomId());
         System.out.println(chatMessageDto.getUserEmail());
-        System.out.println("33333333333333333333333333333333333333333333333");
+        System.out.println("333333333333333333333333333333333333333333333333");
 
         messagingTemplate.convertAndSend("/sub/chats/" + chatMessageDto.getChatRoomId(), chatMessageDto);
     }
