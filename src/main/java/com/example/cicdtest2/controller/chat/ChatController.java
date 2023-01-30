@@ -16,11 +16,11 @@ public class ChatController {
     @ResponseBody
     @MessageMapping("/chats") // socket 통신은 request를 안주나??? // 혹시 @Transactional 줘야하나???
     public void message(ChatMessageDto chatMessageDto) {
-        System.out.println("33333333333333333333333333333333333333333333333");
+        System.out.println("333333333333333333333333333333333333333333333333");
         System.out.println(chatMessageDto.getMessage());
         System.out.println(chatMessageDto.getChatRoomId());
         System.out.println(chatMessageDto.getUserEmail());
-        System.out.println("333333333333333333333333333333333333333333333333");
+        System.out.println("3333333333333333333333333333333333333333333333333");
 
         messagingTemplate.convertAndSend("/sub/chats/" + chatMessageDto.getChatRoomId(), chatMessageDto);
     }
