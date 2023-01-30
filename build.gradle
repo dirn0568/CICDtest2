@@ -30,6 +30,10 @@ dependencies {
     implementation 'org.webjars:stomp-websocket:2.3.3-1'
     implementation 'org.webjars:sockjs-client:1.1.2'
 
+    // ElasticCache redis
+    implementation("org.springframework.boot:spring-boot-starter-data-redis")
+    //implementation("redis.clients:jedis:3.3.0")
+
     //logback
     dependencies {
         implementation (
