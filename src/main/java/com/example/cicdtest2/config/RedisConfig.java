@@ -19,6 +19,7 @@ public class RedisConfig {
     @Bean
     public LettuceConnectionFactory redisConnectionFactory() {
         return new LettuceConnectionFactory(host, port);
+        // sfsdf
     }
     @Bean
     public RedisTemplate<String, Object> redisTemplate() {
