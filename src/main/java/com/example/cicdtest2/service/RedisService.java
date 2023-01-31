@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 @Service
 public class RedisService {
-
+    
     private final RedisTemplate<String, Object> redisTemplate;
 
     public String redisString(RedisRequestDto requestDto) {
@@ -21,7 +21,6 @@ public class RedisService {
 
 
         String redis = (String)operations.get(requestDto.getName());
-        // 아니 이게 맞음??
         return redis;
     }
 }
