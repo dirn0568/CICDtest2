@@ -10,4 +10,5 @@ public class ChatMessageDto {
     private Long chatRoomId;
     private String userEmail;
     private String message; // 메시지
+    // 테스트중
 }

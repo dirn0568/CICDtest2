@@ -13,13 +13,13 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class RedisController {
 
-    private final RedisService redisService;
-
-    @PostMapping("/test")
-    public String test(@RequestBody RedisRequestDto requestDto) {
-
-        String value = redisService.redisString(requestDto);
-        return "벨류는 " + value;
-    }
+//    private final RedisService redisService;
+//
+//    @PostMapping("/test")
+//    public String test(@RequestBody RedisRequestDto requestDto) {
+//
+//        String value = redisService.redisString(requestDto);
+//        return "벨류는 " + value;
+//    }
 
 }

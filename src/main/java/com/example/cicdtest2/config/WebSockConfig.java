@@ -16,6 +16,7 @@ public class WebSockConfig implements WebSocketMessageBrokerConfigurer {
     public void configureMessageBroker(MessageBrokerRegistry config) {
         config.enableSimpleBroker("/sub");
         config.setApplicationDestinationPrefixes("/pub");
+        //sdfsdfa
     }
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
