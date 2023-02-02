@@ -2,6 +2,7 @@ package com.example.cicdtest2.config;
 
 
 import com.example.cicdtest2.dto.ChatMessage;
+import com.example.cicdtest2.service.RedisMessageStringSubscriber;
 import com.example.cicdtest2.service.RedisSubService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
@@ -39,8 +40,29 @@ public class RedisConfig {
     @Bean
     public RedisTemplate<?, ?> redisTemplate() {
         RedisTemplate<byte[], byte[]> redisTemplate = new RedisTemplate<>();
+        redisTemplate.setKeySerializer(new StringRedisSerializer());
+        redisTemplate.setValueSerializer(new StringRedisSerializer());
         redisTemplate.setConnectionFactory(redisConnectionFactory());
         return redisTemplate;
+    }
+
+    @Bean
+    RedisMessageListenerContainer redisContainer() {
+        RedisMessageListenerContainer container = new RedisMessageListenerContainer();
+        container.setConnectionFactory(redisConnectionFactory());
+        container.addMessageListener(messageStringListener(), topic01());
+
+        return container;
+    }
+
+    @Bean
+    MessageListenerAdapter messageStringListener() {
+        return new MessageListenerAdapter(new RedisMessageStringSubscriber());
+    }
+
+    @Bean
+    ChannelTopic topic01() {
+        return new ChannelTopic("ch01");
     }
 
 }

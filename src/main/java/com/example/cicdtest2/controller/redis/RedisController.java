@@ -9,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
@@ -18,6 +19,8 @@ public class RedisController {
     private final RedisService redisService;
 
     private final RedisPubService redisPubService;
+
+    private final RedisTemplate<String, String> stringRedisTemplate;
 //    @PostMapping("/test")
 //    public void test(@RequestBody ChatMessage chatMessage) {
 //        redisPubService.sendMessage(chatMessage);
@@ -26,5 +29,10 @@ public class RedisController {
     public String test(@RequestBody RedisRequestDto requestDto) {
         String value = redisService.redisString(requestDto);
         return "벨류는 " + value;
+    }
+
+    @GetMapping("test2")
+    public void test2() {
+        stringRedisTemplate.convertAndSend("ch01", "Coffee, latte");
     }
 }
