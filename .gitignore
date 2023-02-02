@@ -21,6 +21,7 @@ bin/
 application.yml
 application-local.yml
 application-server.yml
+application-abcd.yml
 
 .idea
 *.iws

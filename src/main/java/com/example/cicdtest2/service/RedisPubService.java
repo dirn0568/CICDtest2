@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class RedisPubService {
     private final RedisTemplate<String, Object> redisTemplate;
-
     public void sendMessage(ChatMessage chatMessage) {
         redisTemplate.convertAndSend("topic1", chatMessage);
     }

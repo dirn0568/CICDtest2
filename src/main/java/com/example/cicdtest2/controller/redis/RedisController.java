@@ -1,6 +1,8 @@
 package com.example.cicdtest2.controller.redis;
 
+import com.example.cicdtest2.dto.ChatMessage;
 import com.example.cicdtest2.dto.redis.RedisRequestDto;
+import com.example.cicdtest2.service.RedisPubService;
 import com.example.cicdtest2.service.RedisService;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
@@ -15,11 +17,14 @@ public class RedisController {
 
     private final RedisService redisService;
 
+    private final RedisPubService redisPubService;
+//    @PostMapping("/test")
+//    public void test(@RequestBody ChatMessage chatMessage) {
+//        redisPubService.sendMessage(chatMessage);
+//    }
     @PostMapping("/test")
     public String test(@RequestBody RedisRequestDto requestDto) {
-
         String value = redisService.redisString(requestDto);
         return "벨류는 " + value;
     }
-
 }
